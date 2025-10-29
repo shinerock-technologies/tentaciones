@@ -1,0 +1,15 @@
+{
+  "colors": {
+    "primary": "#ea580c",
+    "primaryHover": "#c2410c",
+    "text": {
+      "primary": "#262626",
+      "secondary": "#737373",
+      "light": "#a3a3a3"
+    },
+    "background": {
+      "main": "#fafaf9",
+      "card": "#e5e5e5"
+    }
+  }
+}

@@ -1,0 +1,310 @@
+{
+  "shopName": {
+    "en": "Tentaciones by Sandili",
+    "es": "Tentaciones by Sandili"
+  },
+  "hero": {
+    "title": {
+      "en": "Personalized Pastry Creations.",
+      "es": "Pastelería Personalizada."
+    },
+    "subtitle1": {
+      "en": "Passionate about crafting unique desserts that",
+      "es": "Apasionados por crear postres únicos que"
+    },
+    "subtitle2": {
+      "en": "delight every sense since 2005.",
+      "es": "deleitan cada sentido desde 2005."
+    },
+    "authors": {
+      "en": "Sandra Iberkleid & Team Tentaciones",
+      "es": "Sandra Iberkleid y el Equipo Tentaciones"
+    }
+  },
+  "filter": {
+    "label": {
+      "en": "filter pastries by:",
+      "es": "filtrar pasteles por:"
+    },
+    "placeholder": {
+      "en": "Specialties",
+      "es": "Especialidades"
+    }
+  },
+  "menu": {
+    "items": {
+      "en": ["Home", "Our Story", "Collections", "Contact"],
+      "es": ["Inicio", "Nuestra Historia", "Colecciones", "Contacto"]
+    }
+  },
+  "categories": {
+    "en": ["All", "Pastries", "Viennoiseries", "Cakes"],
+    "es": ["Todo", "Pasteles", "Bollería", "Tortas"],
+    "slugs": ["todo", "pasteles", "bolleria", "tortas"]
+  },
+  "footer": {
+    "address": {
+      "en": "Calle 10 de Calacoto #477 - La Paz, Bolivia",
+      "es": "Calle 10 de Calacoto #477 - La Paz, Bolivia"
+    },
+    "addressLink": "https://www.google.com/maps/search/?api=1&query=FW47%2BW6+La+Paz+Bolivia",
+    "phone": "+52 (55) 1234 5678",
+    "email": "contacto@tentaciones.com",
+    "hours": {
+      "en": "Open Tuesday through Sunday, 10am-7pm. Closed Monday.",
+      "es": "Abierto de martes a domingo, 10am-7pm. Cerrado los lunes."
+    },
+    "links": [
+      {
+        "label": {
+          "en": "Pastries",
+          "es": "Pasteles"
+        },
+        "url": "#"
+      },
+      {
+        "label": {
+          "en": "Fabrication",
+          "es": "Elaboración"
+        },
+        "url": "#"
+      },
+      {
+        "label": {
+          "en": "Boutique",
+          "es": "Tienda"
+        },
+        "url": "#"
+      },
+      {
+        "label": {
+          "en": "Legal Notices",
+          "es": "Avisos Legales"
+        },
+        "url": "#"
+      }
+    ],
+    "credit": {
+      "en": "Designed and developed by Shinerock Technologies",
+      "es": "Diseñado y desarrollado por Shinerock Technologies"
+    }
+  },
+  "pastries": [
+    {
+      "id": 1,
+      "slug": "macarons-de-amor",
+      "title": {
+        "en": "Macarons de Amor",
+        "es": "Macarons de Amor"
+      },
+      "description": {
+        "en": "Delicate French macarons filled with rose, pistachio, and champagne ganache. Perfect balance of crunch and softness.",
+        "es": "Delicados macarons franceses rellenos de ganache de rosa, pistacho y champaña. El equilibrio perfecto entre crujiente y suavidad."
+      },
+      "price": "$38",
+      "category": {
+        "en": "Pastries",
+        "es": "Pasteles"
+      },
+      "image": "https://images.unsplash.com/photo-1569864358642-9d1684040f43?w=800&q=80"
+    },
+    {
+      "id": 2,
+      "slug": "eclair-de-oro",
+      "title": {
+        "en": "Éclair de Oro",
+        "es": "Éclair de Oro"
+      },
+      "description": {
+        "en": "Classic éclairs with golden glaze and hand-piped vanilla bean cream.",
+        "es": "Éclairs clásicos con glaseado dorado y crema de vainilla natural hecha a mano."
+      },
+      "price": "$42",
+      "category": {
+        "en": "Pastries",
+        "es": "Pasteles"
+      },
+      "image": "https://images.unsplash.com/photo-1486427944299-d1955d23e34d?w=800&q=80"
+    },
+    {
+      "id": 3,
+      "slug": "tarta-real-de-frutas",
+      "title": {
+        "en": "Royal Fruit Tart",
+        "es": "Tarta Real de Frutas"
+      },
+      "description": {
+        "en": "Elegant tart with seasonal fruits and vanilla cream. Glazed with apricot and decorated with edible flowers.",
+        "es": "Elegante tarta con frutas de temporada y crema de vainilla. Glaseada con albaricoque y decorada con flores comestibles."
+      },
+      "price": "$52",
+      "category": {
+        "en": "Pastries",
+        "es": "Pasteles"
+      },
+      "image": "https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=800&q=80"
+    },
+    {
+      "id": 4,
+      "slug": "croissant-dorado",
+      "title": {
+        "en": "Golden Croissant",
+        "es": "Croissant Dorado"
+      },
+      "description": {
+        "en": "Flaky, buttery croissants made with 72-hour fermentation and European butter for a crisp golden finish.",
+        "es": "Crujientes croissants de mantequilla elaborados con fermentación de 72 horas y mantequilla europea para un acabado dorado perfecto."
+      },
+      "price": "$28",
+      "category": {
+        "en": "Viennoiseries",
+        "es": "Bollería"
+      },
+      "image": "https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=800&q=80"
+    },
+    {
+      "id": 5,
+      "slug": "torta-opera-tentacion",
+      "title": {
+        "en": "Opera Temptation Cake",
+        "es": "Torta Ópera Tentación"
+      },
+      "description": {
+        "en": "Layers of almond sponge, coffee buttercream, and chocolate ganache with a shimmering gold finish.",
+        "es": "Capas de bizcocho de almendra, crema de mantequilla al café y ganache de chocolate con un acabado dorado brillante."
+      },
+      "price": "$58",
+      "category": {
+        "en": "Cakes",
+        "es": "Tortas"
+      },
+      "image": "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=800&q=80"
+    },
+    {
+      "id": 6,
+      "slug": "macarons-de-amor-2",
+      "title": {
+        "en": "Macarons de Amor",
+        "es": "Macarons de Amor"
+      },
+      "description": {
+        "en": "Delicate French macarons filled with rose, pistachio, and champagne ganache. Perfect balance of crunch and softness.",
+        "es": "Delicados macarons franceses rellenos de ganache de rosa, pistacho y champaña. El equilibrio perfecto entre crujiente y suavidad."
+      },
+      "price": "$38",
+      "category": {
+        "en": "Pastries",
+        "es": "Pasteles"
+      },
+      "image": "https://images.unsplash.com/photo-1569864358642-9d1684040f43?w=800&q=80"
+    },
+    {
+      "id": 7,
+      "slug": "eclair-de-oro-2",
+      "title": {
+        "en": "Éclair de Oro",
+        "es": "Éclair de Oro"
+      },
+      "description": {
+        "en": "Classic éclairs with golden glaze and hand-piped vanilla bean cream.",
+        "es": "Éclairs clásicos con glaseado dorado y crema de vainilla natural hecha a mano."
+      },
+      "price": "$42",
+      "category": {
+        "en": "Pastries",
+        "es": "Pasteles"
+      },
+      "image": "https://images.unsplash.com/photo-1486427944299-d1955d23e34d?w=800&q=80"
+    },
+    {
+      "id": 8,
+      "slug": "tarta-real-de-frutas-2",
+      "title": {
+        "en": "Royal Fruit Tart",
+        "es": "Tarta Real de Frutas"
+      },
+      "description": {
+        "en": "Elegant tart with seasonal fruits and vanilla cream. Glazed with apricot and decorated with edible flowers.",
+        "es": "Elegante tarta con frutas de temporada y crema de vainilla. Glaseada con albaricoque y decorada con flores comestibles."
+      },
+      "price": "$52",
+      "category": {
+        "en": "Pastries",
+        "es": "Pasteles"
+      },
+      "image": "https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=800&q=80"
+    },
+    {
+      "id": 9,
+      "slug": "croissant-dorado-2",
+      "title": {
+        "en": "Golden Croissant",
+        "es": "Croissant Dorado"
+      },
+      "description": {
+        "en": "Flaky, buttery croissants made with 72-hour fermentation and European butter for a crisp golden finish.",
+        "es": "Crujientes croissants de mantequilla elaborados con fermentación de 72 horas y mantequilla europea para un acabado dorado perfecto."
+      },
+      "price": "$28",
+      "category": {
+        "en": "Viennoiseries",
+        "es": "Bollería"
+      },
+      "image": "https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=800&q=80"
+    },
+    {
+      "id": 10,
+      "slug": "torta-opera-tentacion-2",
+      "title": {
+        "en": "Opera Temptation Cake",
+        "es": "Torta Ópera Tentación"
+      },
+      "description": {
+        "en": "Layers of almond sponge, coffee buttercream, and chocolate ganache with a shimmering gold finish.",
+        "es": "Capas de bizcocho de almendra, crema de mantequilla al café y ganache de chocolate con un acabado dorado brillante."
+      },
+      "price": "$58",
+      "category": {
+        "en": "Cakes",
+        "es": "Tortas"
+      },
+      "image": "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=800&q=80"
+    },
+    {
+      "id": 11,
+      "slug": "croissant-dorado-3",
+      "title": {
+        "en": "Golden Croissant",
+        "es": "Croissant Dorado"
+      },
+      "description": {
+        "en": "Flaky, buttery croissants made with 72-hour fermentation and European butter for a crisp golden finish.",
+        "es": "Crujientes croissants de mantequilla elaborados con fermentación de 72 horas y mantequilla europea para un acabado dorado perfecto."
+      },
+      "price": "$28",
+      "category": {
+        "en": "Viennoiseries",
+        "es": "Bollería"
+      },
+      "image": "https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=800&q=80"
+    },
+    {
+      "id": 12,
+      "slug": "torta-opera-tentacion-3",
+      "title": {
+        "en": "Opera Temptation Cake",
+        "es": "Torta Ópera Tentación"
+      },
+      "description": {
+        "en": "Layers of almond sponge, coffee buttercream, and chocolate ganache with a shimmering gold finish.",
+        "es": "Capas de bizcocho de almendra, crema de mantequilla al café y ganache de chocolate con un acabado dorado brillante."
+      },
+      "price": "$58",
+      "category": {
+        "en": "Cakes",
+        "es": "Tortas"
+      },
+      "image": "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=800&q=80"
+    }
+  ]
+}
