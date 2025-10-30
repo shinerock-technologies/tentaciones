@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Image from "next/image";
 import { X } from "lucide-react";
@@ -9,7 +9,7 @@ import style from "../style.json";
 
 const lang = "es";
 
-export default function Home() {
+function HomeContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [menuOpen, setMenuOpen] = useState(false);
@@ -17,6 +17,11 @@ export default function Home() {
     data.categories[lang][0]
   );
   const [selectedPastry, setSelectedPastry] = useState<number | null>(null);
+
+  const filteredPastries =
+    selectedCategory === data.categories[lang][0]
+      ? data.pastries
+      : data.pastries.filter((p) => p.category[lang] === selectedCategory);
 
   useEffect(() => {
     const categorySlug = searchParams.get("category");
@@ -36,12 +41,7 @@ export default function Home() {
     } else {
       setSelectedPastry(null);
     }
-  }, [searchParams]);
-
-  const filteredPastries =
-    selectedCategory === data.categories[lang][0]
-      ? data.pastries
-      : data.pastries.filter((p) => p.category[lang] === selectedCategory);
+  }, [searchParams, filteredPastries]);
 
   return (
     <main className="min-h-screen bg-neutral-50">
@@ -395,5 +395,13 @@ export default function Home() {
         </div>
       </footer>
     </main>
+  );
+}
+
+export default function Home() {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-white" />}>
+      <HomeContent />
+    </Suspense>
   );
 }
