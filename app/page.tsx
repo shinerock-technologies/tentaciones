@@ -7,16 +7,24 @@ import { X } from "lucide-react";
 import data from "../data.json";
 import style from "../style.json";
 
-const lang = "es";
+const DEFAULT_LANG = "es";
+
+type Lang = "en" | "es";
 
 function HomeContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [lang, setLang] = useState<Lang>(DEFAULT_LANG as Lang);
   const [selectedCategory, setSelectedCategory] = useState(
-    data.categories[lang][0]
+    data.categories[DEFAULT_LANG][0]
   );
   const [selectedPastry, setSelectedPastry] = useState<number | null>(null);
+
+  const languageOptions: { code: Lang; display: string; label: string }[] = [
+    { code: "es", display: "ES", label: "Español" },
+    { code: "en", display: "EN", label: "English" },
+  ];
 
   const filteredPastries =
     selectedCategory === data.categories[lang][0]
@@ -85,9 +93,6 @@ function HomeContent() {
           <span className="text-xs font-semibold tracking-wider xl:text-base xl:font-light">
             Menu
           </span>
-          <div
-            className="w-8 h-[1px] hidden xl:block"
-            style={{ backgroundColor: style.colors.primary }}></div>
         </button>
       </div>
 
@@ -109,7 +114,7 @@ function HomeContent() {
                 href="/"
                 onClick={() => setMenuOpen(false)}
                 className="block text-3xl md:text-4xl font-light text-white hover:opacity-70 transition-opacity">
-                {lang === "es" ? "Inicio" : "Home"}
+                {data.ui.home[lang]}
               </a>
               {data.categories[lang].map((item, index) => (
                 <a
@@ -124,9 +129,29 @@ function HomeContent() {
                 href="#contacto"
                 onClick={() => setMenuOpen(false)}
                 className="block text-3xl md:text-4xl font-light text-white hover:opacity-70 transition-opacity">
-                {lang === "es" ? "Contacto" : "Contact"}
+                {data.ui.contact[lang]}
               </a>
             </nav>
+
+            {/* Language Picker in Menu */}
+            <div className="flex gap-4 mb-8">
+              {languageOptions.map((option, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => {
+                    setLang(option.code);
+                    setSelectedCategory(data.categories[option.code][0]);
+                    setMenuOpen(false);
+                  }}
+                  className={`text-xl font-light transition-opacity ${
+                    lang === option.code
+                      ? "text-white opacity-100"
+                      : "text-white opacity-40 hover:opacity-70"
+                  }`}>
+                  {option.display}
+                </button>
+              ))}
+            </div>
             <div className="text-center space-y-4 text-white">
               <p className="text-xl md:text-2xl font-light">
                 <a
@@ -159,7 +184,8 @@ function HomeContent() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:opacity-70 transition-opacity">
-                  Ver más de {data.footer.instagram} en Instagram
+                  {data.ui.seeMoreInstagram[lang]} {data.footer.instagram}{" "}
+                  {data.ui.onInstagram[lang]}
                 </a>
               </p>
             </div>
@@ -322,7 +348,7 @@ function HomeContent() {
 
                   <div style={{ marginTop: "3rem", paddingTop: "3rem" }}>
                     <h3 className="text-xl font-light mb-6">
-                      Hacer pedido o consulta
+                      {data.ui.orderOrInquiry[lang]}
                     </h3>
                     <div className="space-y-3">
                       <p className="text-base font-light">
@@ -356,7 +382,8 @@ function HomeContent() {
                           target="_blank"
                           rel="noopener noreferrer"
                           className="hover:opacity-70 transition-opacity">
-                          Ver más de {data.footer.instagram} en Instagram
+                          {data.ui.seeMoreInstagram[lang]}{" "}
+                          {data.footer.instagram} {data.ui.onInstagram[lang]}
                         </a>
                       </p>
                     </div>
@@ -447,7 +474,8 @@ function HomeContent() {
               target="_blank"
               rel="noopener noreferrer"
               className="hover:opacity-70 transition-opacity">
-              Ver más de {data.footer.instagram} en Instagram
+              {data.ui.seeMoreInstagram[lang]} {data.footer.instagram}{" "}
+              {data.ui.onInstagram[lang]}
             </a>
           </p>
 

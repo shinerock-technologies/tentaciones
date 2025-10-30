@@ -31,6 +31,28 @@
       "es": "Especialidades"
     }
   },
+  "ui": {
+    "home": {
+      "en": "Home",
+      "es": "Inicio"
+    },
+    "contact": {
+      "en": "Contact",
+      "es": "Contacto"
+    },
+    "seeMoreInstagram": {
+      "en": "See more from",
+      "es": "Ver más de"
+    },
+    "onInstagram": {
+      "en": "on Instagram",
+      "es": "en Instagram"
+    },
+    "orderOrInquiry": {
+      "en": "Place Order or Inquiry",
+      "es": "Hacer pedido o consulta"
+    }
+  },
 
   "categories": {
     "en": [
