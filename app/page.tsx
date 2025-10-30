@@ -105,14 +105,27 @@ function HomeContent() {
             <nav
               className="text-center space-y-6"
               style={{ marginBottom: "8rem" }}>
-              {data.menu.items[lang].map((item, index) => (
+              <a
+                href="/"
+                onClick={() => setMenuOpen(false)}
+                className="block text-3xl md:text-4xl font-light text-white hover:opacity-70 transition-opacity">
+                {lang === "es" ? "Inicio" : "Home"}
+              </a>
+              {data.categories[lang].map((item, index) => (
                 <a
                   key={item}
-                  href={data.menu.links[lang][index]}
+                  href={`/?category=${data.categories.slugs[index]}`}
+                  onClick={() => setMenuOpen(false)}
                   className="block text-3xl md:text-4xl font-light text-white hover:opacity-70 transition-opacity">
                   {item}
                 </a>
               ))}
+              <a
+                href="#contacto"
+                onClick={() => setMenuOpen(false)}
+                className="block text-3xl md:text-4xl font-light text-white hover:opacity-70 transition-opacity">
+                {lang === "es" ? "Contacto" : "Contact"}
+              </a>
             </nav>
             <div className="text-center space-y-4 text-white">
               <p className="text-xl md:text-2xl font-light">
@@ -275,13 +288,14 @@ function HomeContent() {
 
           <div className="h-full md:h-auto">
             <div className="flex flex-col md:grid md:grid-cols-2 h-full md:h-screen md:max-h-screen">
-              <div className="w-full h-1/2 md:h-full bg-neutral-200">
+              <div className="w-full h-1/2 md:h-full bg-neutral-200 flex items-center justify-center overflow-hidden">
                 <Image
                   src={filteredPastries[selectedPastry].image}
                   alt={filteredPastries[selectedPastry].title[lang]}
                   width={800}
                   height={800}
                   className="w-full h-full object-cover"
+                  style={{ objectFit: "cover" }}
                 />
               </div>
               <div className="flex-1 overflow-y-auto md:flex md:flex-col md:justify-center">
@@ -403,15 +417,15 @@ function HomeContent() {
                 justifyContent: "center",
                 gap: "1.5rem",
               }}>
-              {data.footer.links.map((link, index) => (
+              {data.categories[lang].slice(1).map((category, index) => (
                 <a
-                  key={index}
-                  href={link.url}
+                  key={category}
+                  href={`/?category=${data.categories.slugs[index + 1]}`}
                   className="text-sm font-light tracking-wide transition-opacity hover:opacity-70"
                   style={{
                     color: index === 0 ? style.colors.primary : "#404040",
                   }}>
-                  {link.label[lang]}
+                  {category}
                 </a>
               ))}
             </div>

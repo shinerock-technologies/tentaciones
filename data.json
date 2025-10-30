@@ -31,26 +31,38 @@
       "es": "Especialidades"
     }
   },
-  "menu": {
-    "items": {
-      "en": ["Home", "Our Story", "Collections", "Instagram", "Contact"],
-      "es": [
-        "Inicio",
-        "Nuestra Historia",
-        "Colecciones",
-        "Instagram",
-        "Contacto"
-      ]
-    },
-    "links": {
-      "en": ["/", "#", "#", "/instagram", "#"],
-      "es": ["/", "#", "#", "/instagram", "#"]
-    }
-  },
+
   "categories": {
-    "en": ["All", "Pastries", "Viennoiseries", "Cakes"],
-    "es": ["Todo", "Pasteles", "Bollería", "Tortas"],
-    "slugs": ["todo", "pasteles", "bolleria", "tortas"]
+    "en": [
+      "All",
+      "Pastries",
+      "Viennoiseries",
+      "Cakes",
+      "Weddings",
+      "Birthdays",
+      "Princesses",
+      "Superheroes"
+    ],
+    "es": [
+      "Todo",
+      "Pasteles",
+      "Bollería",
+      "Tortas",
+      "Bodas",
+      "Cumpleaños",
+      "Princesas",
+      "Superhéroes"
+    ],
+    "slugs": [
+      "todo",
+      "pasteles",
+      "bolleria",
+      "tortas",
+      "bodas",
+      "cumpleanos",
+      "princesas",
+      "superheroes"
+    ]
   },
   "footer": {
     "address": {
@@ -66,36 +78,7 @@
       "en": "Open Tuesday through Sunday, 10am-7pm. Closed Monday.",
       "es": "Abierto de martes a domingo, 10am-7pm. Cerrado los lunes."
     },
-    "links": [
-      {
-        "label": {
-          "en": "Pastries",
-          "es": "Pasteles"
-        },
-        "url": "#"
-      },
-      {
-        "label": {
-          "en": "Fabrication",
-          "es": "Elaboración"
-        },
-        "url": "#"
-      },
-      {
-        "label": {
-          "en": "Boutique",
-          "es": "Tienda"
-        },
-        "url": "#"
-      },
-      {
-        "label": {
-          "en": "Legal Notices",
-          "es": "Avisos Legales"
-        },
-        "url": "#"
-      }
-    ],
+
     "credit": {
       "en": "Designed and developed by Shinerock Technologies",
       "es": "Diseñado y desarrollado por Shinerock Technologies"
@@ -192,131 +175,78 @@
       },
       "image": "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=800&q=80"
     },
+
     {
-      "id": 6,
-      "slug": "macarons-de-amor-2",
+      "id": 13,
+      "slug": "torta-boda-elegante",
       "title": {
-        "en": "Macarons de Amor",
-        "es": "Macarons de Amor"
+        "en": "Elegant Wedding Cake",
+        "es": "Torta de Boda Elegante"
       },
       "description": {
-        "en": "Delicate French macarons filled with rose, pistachio, and champagne ganache. Perfect balance of crunch and softness.",
-        "es": "Delicados macarons franceses rellenos de ganache de rosa, pistacho y champaña. El equilibrio perfecto entre crujiente y suavidad."
+        "en": "Multi-tiered wedding cake with delicate floral decorations. Customizable flavors and designs.",
+        "es": "Torta de bodas de varios pisos con delicadas decoraciones florales. Sabores y diseños personalizables."
       },
-      "price": "$38",
+      "price": "$250",
       "category": {
-        "en": "Pastries",
-        "es": "Pasteles"
+        "en": "Weddings",
+        "es": "Bodas"
       },
-      "image": "https://images.unsplash.com/photo-1569864358642-9d1684040f43?w=800&q=80"
+      "image": "https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=800&q=80"
     },
     {
-      "id": 7,
-      "slug": "eclair-de-oro-2",
+      "id": 14,
+      "slug": "torta-cumpleanos-festiva",
       "title": {
-        "en": "Éclair de Oro",
-        "es": "Éclair de Oro"
+        "en": "Festive Birthday Cake",
+        "es": "Torta de Cumpleaños Festiva"
       },
       "description": {
-        "en": "Classic éclairs with golden glaze and hand-piped vanilla bean cream.",
-        "es": "Éclairs clásicos con glaseado dorado y crema de vainilla natural hecha a mano."
+        "en": "Colorful birthday cake with custom decorations. Perfect for celebrating special moments.",
+        "es": "Torta de cumpleaños colorida con decoraciones personalizadas. Perfecta para celebrar momentos especiales."
       },
-      "price": "$42",
+      "price": "$85",
       "category": {
-        "en": "Pastries",
-        "es": "Pasteles"
+        "en": "Birthdays",
+        "es": "Cumpleaños"
       },
-      "image": "https://images.unsplash.com/photo-1486427944299-d1955d23e34d?w=800&q=80"
+      "image": "https://images.unsplash.com/photo-1558636508-e0db3814bd1d?w=800&q=80"
     },
     {
-      "id": 8,
-      "slug": "tarta-real-de-frutas-2",
+      "id": 15,
+      "slug": "torta-princesa-magica",
       "title": {
-        "en": "Royal Fruit Tart",
-        "es": "Tarta Real de Frutas"
+        "en": "Magical Princess Cake",
+        "es": "Torta de Princesa Mágica"
       },
       "description": {
-        "en": "Elegant tart with seasonal fruits and vanilla cream. Glazed with apricot and decorated with edible flowers.",
-        "es": "Elegante tarta con frutas de temporada y crema de vainilla. Glaseada con albaricoque y decorada con flores comestibles."
+        "en": "Enchanting princess-themed cake with pink frosting and edible glitter. Every little princess's dream.",
+        "es": "Encantadora torta temática de princesas con glaseado rosa y brillantina comestible. El sueño de toda princesita."
       },
-      "price": "$52",
+      "price": "$95",
       "category": {
-        "en": "Pastries",
-        "es": "Pasteles"
+        "en": "Princesses",
+        "es": "Princesas"
+      },
+      "image": "https://images.unsplash.com/photo-1621303837174-89787a7d4729?w=800&q=80"
+    },
+    {
+      "id": 16,
+      "slug": "torta-superheroe-aventura",
+      "title": {
+        "en": "Superhero Adventure Cake",
+        "es": "Torta de Superhéroe Aventura"
+      },
+      "description": {
+        "en": "Action-packed superhero cake with bold colors and custom character designs. Perfect for young heroes.",
+        "es": "Torta de superhéroes llena de acción con colores vibrantes y diseños personalizados. Perfecta para pequeños héroes."
+      },
+      "price": "$95",
+      "category": {
+        "en": "Superheroes",
+        "es": "Superhéroes"
       },
       "image": "https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=800&q=80"
-    },
-    {
-      "id": 9,
-      "slug": "croissant-dorado-2",
-      "title": {
-        "en": "Golden Croissant",
-        "es": "Croissant Dorado"
-      },
-      "description": {
-        "en": "Flaky, buttery croissants made with 72-hour fermentation and European butter for a crisp golden finish.",
-        "es": "Crujientes croissants de mantequilla elaborados con fermentación de 72 horas y mantequilla europea para un acabado dorado perfecto."
-      },
-      "price": "$28",
-      "category": {
-        "en": "Viennoiseries",
-        "es": "Bollería"
-      },
-      "image": "https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=800&q=80"
-    },
-    {
-      "id": 10,
-      "slug": "torta-opera-tentacion-2",
-      "title": {
-        "en": "Opera Temptation Cake",
-        "es": "Torta Ópera Tentación"
-      },
-      "description": {
-        "en": "Layers of almond sponge, coffee buttercream, and chocolate ganache with a shimmering gold finish.",
-        "es": "Capas de bizcocho de almendra, crema de mantequilla al café y ganache de chocolate con un acabado dorado brillante."
-      },
-      "price": "$58",
-      "category": {
-        "en": "Cakes",
-        "es": "Tortas"
-      },
-      "image": "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=800&q=80"
-    },
-    {
-      "id": 11,
-      "slug": "croissant-dorado-3",
-      "title": {
-        "en": "Golden Croissant",
-        "es": "Croissant Dorado"
-      },
-      "description": {
-        "en": "Flaky, buttery croissants made with 72-hour fermentation and European butter for a crisp golden finish.",
-        "es": "Crujientes croissants de mantequilla elaborados con fermentación de 72 horas y mantequilla europea para un acabado dorado perfecto."
-      },
-      "price": "$28",
-      "category": {
-        "en": "Viennoiseries",
-        "es": "Bollería"
-      },
-      "image": "https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=800&q=80"
-    },
-    {
-      "id": 12,
-      "slug": "torta-opera-tentacion-3",
-      "title": {
-        "en": "Opera Temptation Cake",
-        "es": "Torta Ópera Tentación"
-      },
-      "description": {
-        "en": "Layers of almond sponge, coffee buttercream, and chocolate ganache with a shimmering gold finish.",
-        "es": "Capas de bizcocho de almendra, crema de mantequilla al café y ganache de chocolate con un acabado dorado brillante."
-      },
-      "price": "$58",
-      "category": {
-        "en": "Cakes",
-        "es": "Tortas"
-      },
-      "image": "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=800&q=80"
     }
   ]
 }
