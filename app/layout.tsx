@@ -12,6 +12,30 @@ export const metadata: Metadata = {
   title: "Tentaciones por Sandili - Pastelería Personalizada",
   description:
     "Pastelería artesanal personalizada en La Paz, Bolivia desde 2005",
+  openGraph: {
+    title: "Tentaciones por Sandili - Pastelería Personalizada",
+    description:
+      "Pastelería artesanal personalizada en La Paz, Bolivia desde 2005",
+    url: "https://tentaciones.com",
+    siteName: "Tentaciones por Sandili",
+    images: [
+      {
+        url: "/logo.webp",
+        width: 520,
+        height: 320,
+        alt: "Tentaciones por Sandili",
+      },
+    ],
+    locale: "es_BO",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Tentaciones por Sandili - Pastelería Personalizada",
+    description:
+      "Pastelería artesanal personalizada en La Paz, Bolivia desde 2005",
+    images: ["/logo.webp"],
+  },
 };
 
 export default function RootLayout({

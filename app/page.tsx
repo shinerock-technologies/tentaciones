@@ -165,7 +165,9 @@ function HomeContent() {
               />
             </div>
           </div>
-          <div className="text-center mb-40 md:mb-48 max-w-5xl mx-auto">
+          <div
+            className="text-center mb-40 md:mb-48 max-w-5xl mx-auto"
+            style={{ marginTop: "2rem" }}>
             <h1 className="text-2xl md:text-4xl lg:text-5xl font-light tracking-tight mb-12 leading-tight px-4">
               {data.hero.title[lang]}
             </h1>
