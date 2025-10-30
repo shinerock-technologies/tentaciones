@@ -183,8 +183,12 @@ function HomeContent() {
             </p>
           </div>
           {/* Filter */}
-          <div className="text-center mb-24 md:mb-32">
-            <p className="text-sm md:text-base italic mb-6">
+          <div
+            className="text-center mb-24 md:mb-32"
+            style={{ marginTop: "2rem" }}>
+            <p
+              className="text-sm md:text-base italic"
+              style={{ marginBottom: "1.5rem" }}>
               {data.filter.label[lang]}
             </p>
             <div className="flex flex-wrap justify-center gap-4">
