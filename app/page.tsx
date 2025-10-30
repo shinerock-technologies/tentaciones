@@ -105,17 +105,17 @@ function HomeContent() {
             <nav
               className="text-center space-y-6"
               style={{ marginBottom: "8rem" }}>
-              {data.menu.items[lang].map((item) => (
+              {data.menu.items[lang].map((item, index) => (
                 <a
                   key={item}
-                  href="#"
+                  href={data.menu.links[lang][index]}
                   className="block text-3xl md:text-4xl font-light text-white hover:opacity-70 transition-opacity">
                   {item}
                 </a>
               ))}
             </nav>
-            <div className="text-center space-y-2 text-white">
-              <p className="text-xs md:text-sm font-light">
+            <div className="text-center space-y-4 text-white">
+              <p className="text-xl md:text-2xl font-light">
                 <a
                   href={data.footer.addressLink}
                   target="_blank"
@@ -124,18 +124,29 @@ function HomeContent() {
                   {data.footer.address[lang]}
                 </a>
               </p>
-              <p className="text-xs md:text-sm font-light">
+              <p className="text-xl md:text-2xl font-light">
                 <a
                   href={`tel:${data.footer.phone}`}
                   className="hover:opacity-70 transition-opacity">
                   {data.footer.phone}
                 </a>
               </p>
-              <p className="text-xs md:text-sm font-light">
+              <p className="text-xl md:text-2xl font-light">
                 <a
                   href={`mailto:${data.footer.email}`}
                   className="hover:opacity-70 transition-opacity">
                   {data.footer.email}
+                </a>
+              </p>
+              <p
+                className="text-lg md:text-xl font-light italic"
+                style={{ marginTop: "2rem" }}>
+                <a
+                  href={data.footer.instagramUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:opacity-70 transition-opacity">
+                  Ver más de {data.footer.instagram} en Instagram
                 </a>
               </p>
             </div>
@@ -315,6 +326,17 @@ function HomeContent() {
                           {data.footer.email}
                         </a>
                       </p>
+                      <p
+                        className="text-sm font-light italic mt-4"
+                        style={{ color: style.colors.primary }}>
+                        <a
+                          href={data.footer.instagramUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="hover:opacity-70 transition-opacity">
+                          Ver más de {data.footer.instagram} en Instagram
+                        </a>
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -394,6 +416,18 @@ function HomeContent() {
               ))}
             </div>
           </div>
+
+          <p
+            className="text-sm font-light italic"
+            style={{ marginBottom: "1rem", color: style.colors.primary }}>
+            <a
+              href={data.footer.instagramUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:opacity-70 transition-opacity">
+              Ver más de {data.footer.instagram} en Instagram
+            </a>
+          </p>
 
           <p className="text-xs font-light text-neutral-400">
             {data.footer.credit[lang]}
