@@ -192,7 +192,7 @@ function HomeContent() {
           <div
             className="text-center mb-40 md:mb-48 max-w-5xl mx-auto"
             style={{ marginTop: "2rem" }}>
-            <h1 className="text-2xl md:text-4xl lg:text-5xl font-light tracking-tight mb-12 leading-tight px-4">
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-light tracking-tight mb-12 leading-tight px-4">
               {data.hero.title[lang]}
             </h1>
             <p className="text-lg md:text-3xl lg:text-4xl font-light leading-tight mb-4 px-4">
@@ -255,9 +255,15 @@ function HomeContent() {
             {filteredPastries.map((pastry, index) => (
               <div
                 key={pastry.id}
-                onClick={() =>
-                  router.push(`?product=${pastry.slug}`, { scroll: false })
-                }
+                onClick={() => {
+                  const categoryIndex =
+                    data.categories[lang].indexOf(selectedCategory);
+                  const categorySlug = data.categories.slugs[categoryIndex];
+                  router.push(
+                    `?category=${categorySlug}&product=${pastry.slug}`,
+                    { scroll: false }
+                  );
+                }}
                 className="group cursor-pointer relative">
                 <div className="bg-neutral-200 overflow-hidden aspect-square relative">
                   <Image
@@ -302,7 +308,9 @@ function HomeContent() {
                 <div
                   style={{ padding: "3rem 2rem" }}
                   className="md:px-20 lg:px-24 max-w-2xl md:mx-auto">
-                  <p className="text-xs tracking-widest text-neutral-500 uppercase mb-4">
+                  <p
+                    className="text-xs tracking-widest uppercase mb-4"
+                    style={{ color: style.colors.primary }}>
                     {filteredPastries[selectedPastry].category[lang]}
                   </p>
                   <h2 className="text-4xl md:text-5xl font-light mb-6">
