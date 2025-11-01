@@ -226,13 +226,16 @@ function HomeContent() {
           }}
           className="flex flex-col items-center">
           <div className="mb-8 md:mb-12">
-            <div className="w-80 md:w-96">
+            <div
+              className="w-80 md:w-96 relative"
+              style={{ aspectRatio: "520/320" }}>
               <Image
                 src="/logo.webp"
                 alt={data.shopName[lang]}
                 width={520}
                 height={320}
-                className="w-full h-auto object-contain"
+                className="w-full h-full object-contain"
+                priority
               />
             </div>
           </div>
