@@ -45,6 +45,22 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-FSL3Q4TW1T"
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-FSL3Q4TW1T');
+            `,
+          }}
+        />
+      </head>
       <body
         className={`${domine.variable} font-sans antialiased`}
         style={{ fontFamily: "var(--font-domine), serif" }}>
