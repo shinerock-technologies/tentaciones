@@ -11,6 +11,26 @@ const DEFAULT_LANG = "es";
 
 type Lang = "en" | "es";
 
+function GallerySkeleton() {
+  return (
+    <div
+      style={{ paddingLeft: "1rem", paddingRight: "1rem" }}
+      className="flex justify-center mb-20">
+      <div
+        className="grid grid-cols-2 w-full"
+        style={{ maxWidth: "1100px", gap: "1rem" }}>
+        {[...Array(6)].map((_, i) => (
+          <div
+            key={i}
+            className="relative overflow-hidden bg-neutral-200 aspect-square">
+            <div className="absolute inset-0 -translate-x-full animate-shimmer bg-gradient-to-r from-neutral-200 via-neutral-100 to-neutral-200" />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function HomeContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -20,6 +40,7 @@ function HomeContent() {
     data.categories[DEFAULT_LANG][0]
   );
   const [selectedPastry, setSelectedPastry] = useState<number | null>(null);
+  const [imagesLoading, setImagesLoading] = useState(true);
 
   const languageOptions: { code: Lang; display: string; label: string }[] = [
     { code: "es", display: "ES", label: "Español" },
@@ -30,6 +51,12 @@ function HomeContent() {
     selectedCategory === data.categories[lang][0]
       ? data.pastries
       : data.pastries.filter((p) => p.category[lang] === selectedCategory);
+
+  useEffect(() => {
+    setImagesLoading(true);
+    const timer = setTimeout(() => setImagesLoading(false), 800);
+    return () => clearTimeout(timer);
+  }, [selectedCategory]);
 
   useEffect(() => {
     const categorySlug = searchParams.get("category");
@@ -49,7 +76,7 @@ function HomeContent() {
     } else {
       setSelectedPastry(null);
     }
-  }, [searchParams, filteredPastries]);
+  }, [searchParams, lang, selectedCategory]);
 
   return (
     <main className="min-h-screen bg-neutral-50">
@@ -82,14 +109,8 @@ function HomeContent() {
         </div>
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className="flex items-center gap-3 transition-colors"
-          style={{ color: style.colors.primary }}
-          onMouseEnter={(e) =>
-            (e.currentTarget.style.color = style.colors.primaryHover)
-          }
-          onMouseLeave={(e) =>
-            (e.currentTarget.style.color = style.colors.primary)
-          }>
+          className="flex items-center gap-3 transition-colors hover:opacity-70"
+          style={{ color: style.colors.primary }}>
           <span className="text-xs font-semibold tracking-wider xl:text-base xl:font-light">
             Menu
           </span>
@@ -108,12 +129,12 @@ function HomeContent() {
           </button>
           <div className="flex flex-col items-center">
             <nav
-              className="text-center space-y-6"
-              style={{ marginBottom: "8rem" }}>
+              className="text-center space-y-4"
+              style={{ marginBottom: "4rem" }}>
               <a
                 href="/"
                 onClick={() => setMenuOpen(false)}
-                className="block text-3xl md:text-4xl font-light text-white hover:opacity-70 transition-opacity">
+                className="block text-xl xs:text-3xl md:text-4xl font-light text-white hover:opacity-70 transition-opacity">
                 {data.ui.home[lang]}
               </a>
               {data.categories[lang].map((item, index) => (
@@ -121,20 +142,20 @@ function HomeContent() {
                   key={item}
                   href={`/?category=${data.categories.slugs[index]}`}
                   onClick={() => setMenuOpen(false)}
-                  className="block text-3xl md:text-4xl font-light text-white hover:opacity-70 transition-opacity">
+                  className="block text-xl xs:text-3xl md:text-4xl font-light text-white hover:opacity-70 transition-opacity">
                   {item}
                 </a>
               ))}
               <a
                 href="#contacto"
                 onClick={() => setMenuOpen(false)}
-                className="block text-3xl md:text-4xl font-light text-white hover:opacity-70 transition-opacity">
+                className="block text-xl xs:text-3xl md:text-4xl font-light text-white hover:opacity-70 transition-opacity">
                 {data.ui.contact[lang]}
               </a>
             </nav>
 
             {/* Language Picker in Menu */}
-            <div className="flex gap-4 mb-8">
+            <div className="flex gap-4 mb-6">
               {languageOptions.map((option, idx) => (
                 <button
                   key={idx}
@@ -143,7 +164,7 @@ function HomeContent() {
                     setSelectedCategory(data.categories[option.code][0]);
                     setMenuOpen(false);
                   }}
-                  className={`text-xl font-light transition-opacity ${
+                  className={`text-lg font-light transition-opacity ${
                     lang === option.code
                       ? "text-white opacity-100"
                       : "text-white opacity-40 hover:opacity-70"
@@ -152,8 +173,8 @@ function HomeContent() {
                 </button>
               ))}
             </div>
-            <div className="text-center space-y-4 text-white">
-              <p className="text-xl md:text-2xl font-light">
+            <div className="text-center space-y-3 text-white">
+              <p className="text-base xs:text-xl md:text-2xl font-light">
                 <a
                   href={data.footer.addressLink}
                   target="_blank"
@@ -162,14 +183,14 @@ function HomeContent() {
                   {data.footer.address[lang]}
                 </a>
               </p>
-              <p className="text-xl md:text-2xl font-light">
+              <p className="text-base xs:text-xl md:text-2xl font-light">
                 <a
                   href={`tel:${data.footer.phone}`}
                   className="hover:opacity-70 transition-opacity">
                   {data.footer.phone}
                 </a>
               </p>
-              <p className="text-xl md:text-2xl font-light">
+              <p className="text-base xs:text-xl md:text-2xl font-light">
                 <a
                   href={`mailto:${data.footer.email}`}
                   className="hover:opacity-70 transition-opacity">
@@ -177,8 +198,8 @@ function HomeContent() {
                 </a>
               </p>
               <p
-                className="text-lg md:text-xl font-light italic"
-                style={{ marginTop: "2rem" }}>
+                className="text-sm xs:text-base md:text-xl font-light italic"
+                style={{ marginTop: "1.5rem" }}>
                 <a
                   href={data.footer.instagramUrl}
                   target="_blank"
@@ -194,7 +215,7 @@ function HomeContent() {
       )}
 
       {/* Main Content */}
-      <div className="px-12 md:px-20 lg:px-32 pb-20">
+      <div className="px-4 sm:px-12 md:px-20 lg:px-32 pb-20">
         {/* Hero Title */}
         <div
           id="top"
@@ -236,7 +257,7 @@ function HomeContent() {
           </div>
           {/* Filter */}
           <div
-            className="text-center mb-24 md:mb-32"
+            className="text-center mb-24 md:mb-32 px-4"
             style={{ marginTop: "2rem" }}>
             <p
               className="text-sm md:text-base italic"
@@ -272,41 +293,49 @@ function HomeContent() {
         </div>
 
         {/* Gallery - Strict 2 columns */}
-        <div
-          style={{ paddingLeft: "1rem", paddingRight: "1rem" }}
-          className="flex justify-center mb-20">
+        {imagesLoading ? (
+          <GallerySkeleton />
+        ) : (
           <div
-            className="grid grid-cols-2 w-full"
-            style={{ maxWidth: "1100px", gap: "1rem" }}>
-            {filteredPastries.map((pastry, index) => (
-              <div
-                key={pastry.id}
-                onClick={() => {
-                  const categoryIndex =
-                    data.categories[lang].indexOf(selectedCategory);
-                  const categorySlug = data.categories.slugs[categoryIndex];
-                  router.push(
-                    `?category=${categorySlug}&product=${pastry.slug}`,
-                    { scroll: false }
-                  );
-                }}
-                className="group cursor-pointer relative">
-                <div className="bg-neutral-200 overflow-hidden aspect-square relative">
-                  <Image
-                    src={pastry.image}
-                    alt={pastry.title[lang]}
-                    width={400}
-                    height={400}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center text-white">
-                    <h3 className="text-lg font-light">{pastry.title[lang]}</h3>
+            style={{ paddingLeft: "1rem", paddingRight: "1rem" }}
+            className="flex justify-center mb-20 animate-fadeIn">
+            <div
+              className="grid grid-cols-2 w-full"
+              style={{ maxWidth: "1100px", gap: "1rem" }}>
+              {filteredPastries.map((pastry, index) => (
+                <div
+                  key={pastry.id}
+                  onClick={() => {
+                    const categoryIndex =
+                      data.categories[lang].indexOf(selectedCategory);
+                    const categorySlug = data.categories.slugs[categoryIndex];
+                    router.push(
+                      `?category=${categorySlug}&product=${pastry.slug}`,
+                      { scroll: false }
+                    );
+                  }}
+                  className="group cursor-pointer relative">
+                  <div className="bg-neutral-200 overflow-hidden aspect-square relative">
+                    <Image
+                      src={pastry.image}
+                      alt={pastry.title[lang]}
+                      width={400}
+                      height={400}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      priority={index < 2}
+                      loading={index < 2 ? "eager" : "lazy"}
+                    />
+                    <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center text-white">
+                      <h3 className="text-lg font-light">
+                        {pastry.title[lang]}
+                      </h3>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
+        )}
       </div>
 
       {/* Modal */}
